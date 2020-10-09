@@ -1,0 +1,1 @@
+<?php include "check_function.php"; ?>
