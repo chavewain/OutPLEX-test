@@ -9,27 +9,50 @@
    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body class="bg-login">
+
+   <?php include 'login_function.php'; ?>
+
    <div class="wrapper">
      <div id="formContainer">
 
+      <?php if($username_error){ ?>
+         <div class="alert alert-danger mb-0" role="alert">
+           <?= $username_error; ?>
+         </div>
+      <?php } ?>
 
+      <?php if($password_error){ ?>
+         <div class="alert alert-danger" role="alert">
+           <?= $password_error; ?>
+         </div>
+      <?php } ?>
+
+      <?php if($error){ ?>
+         <div class="alert alert-danger" role="alert">
+           <?= $error; ?>
+         </div>
+      <?php } ?>
+
+      
        <!-- Logo -->
        <div class="fadeIn first py-4">
          <img src="assets/img/logo-outplex.svg" id="icon" alt="User Icon" />
        </div>
 
        <!-- Login Form -->
-       <form>
+       <form method="post" action="<?= $_SERVER['PHP_SELF']; ?>">
          <input type="text" id="username" class="fadeIn second" name="username" placeholder="username">
-         <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+         <input type="text" id="password" class="fadeIn third" name="password" placeholder="password">
          <input type="submit" class="fadeIn fourth" value="Log In">
        </form>
 
+
+
        <!-- Remind Passowrd -->
-       <!-- <div id="formFooter">
-         <a class="underlineHover" href="#">Forgot Password?</a>
+       <div id="formFooter">
+            
        </div>
-      -->
+     
      </div>
    </div>
 </body>
