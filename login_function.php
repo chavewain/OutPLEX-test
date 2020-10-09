@@ -40,8 +40,20 @@
 
 	        // exit(md5($password));
 	       	
-	        if($row['password'] == md5($password))
-	        	exit('correcto');
+	        if($row['password'] == md5($password)){
+
+	        	session_start();
+                            
+	            // Store data in session variables
+	            $_SESSION["loggedin"] = true;
+	            $_SESSION["id"] = $id;
+	            $_SESSION["username"] = $username;   
+
+	        	header("Location: dashboard.php");
+	        	
+	        }else{
+	        	$error =  "Invalid username or password!";
+	        }
 
 	        
 	    }
