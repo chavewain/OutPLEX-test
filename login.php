@@ -10,7 +10,7 @@
 </head>
 <body class="bg-login">
    <div class="wrapper">
-     <div id="formContent">
+     <div id="formContainer">
 
 
        <!-- Logo -->

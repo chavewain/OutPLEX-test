@@ -6,7 +6,7 @@ html{
 /* STRUCTURE */
 
 .bg-login{
-  background-image: url(../../assets/img/bg-login.png);
+  background-image: url(../../assets/img/bg-login.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -21,7 +21,7 @@ html{
   padding: 20px;
 }
 
-#formContent {
+#formContainer {
   -webkit-border-radius: 10px 10px 10px 10px;
   border-radius: 10px 10px 10px 10px;
   background: #fff;
@@ -36,20 +36,6 @@ html{
   top: 50%;
   margin-top: -168px;
 }
-}
-
-
-/* TABS */
-
-h2.inactive {
-  color: #cccccc;
-}
-
-h2.active {
-  color: #0d0d0d;
-  border-bottom: 2px solid #5fbae9;
-}
-
 
 
 /* FORM TYPOGRAPHY*/
