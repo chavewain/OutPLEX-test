@@ -13,8 +13,6 @@
 		<div class="row">
 			<div class="col-lg-10 offset-lg-2">
 				<div class="p-2 rounded bg-light mt-5">
-					
-				
 					<table class="table table-striped">
 					  <thead>
 					    <tr>
@@ -22,6 +20,8 @@
 					      <th scope="col">Agent</th>
 					      <th scope="col">Score</th>
 					      <th scope="col">Rated By</th>
+					      <th scope="col" style="width: 140px">Actions</th>
+
 					    </tr>
 					  </thead>
 					  <tbody>
@@ -30,12 +30,21 @@
 					      <td>Mark</td>
 					      <td>86</td>
 					      <td>Mark Zuckerberg</td>
+					      <td>
+					      	<button type="button" class="btn btn-primary btn-sm">Edit</button>
+					      	<button type="button" class="btn btn-danger btn-sm">Delete</button>
+					      </td>
 					    </tr>
 					    <tr>
 					      <th scope="row">2</th>
 					      <td>Jacob</td>
 					      <td>91</td>
 					      <td>steve jobs</td>
+					      <td>
+					      	<button type="button" class="btn btn-primary btn-sm">Edit</button>
+					      	<button type="button" class="btn btn-danger btn-sm">Delete</button>
+					      </td>
+					      
 					    </tr>
 					    
 					  </tbody>
