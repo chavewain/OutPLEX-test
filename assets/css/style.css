@@ -228,5 +228,29 @@ input[type=text]:placeholder {
 }
 .table{
     font-size: .95rem;
-  }
+}
+.table td, .table th {
+    line-height: 30px;
+}
+.top-bar{
+  height: 90px;
+  width: 100%;
+  background-color: rgba(0,0,0,.5);
+}
+.user-img{
+  max-width: 60px;
+  margin: 15px 10px 0 0;
+  float: left;
+}
+.user-data{
+  color: white;
+  float: left;
+  margin-top: 15px;
+}
+.user-data .position{
+    line-height: 14px;
+    font-size: 14px;
+}
+.new-agent{
+  width: 50%;
 }
