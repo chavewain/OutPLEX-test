@@ -219,3 +219,14 @@ input[type=text]:placeholder {
 #icon {
   width:60%;
 }
+
+
+/*Dashoboard*/
+
+.bg-dash{
+  background-color: #f5f5f5;
+}
+.table{
+    font-size: .95rem;
+  }
+}
