@@ -1,5 +1,9 @@
 <?php
 
+
+debug_backtrace() || die ("Direct access not permitted");
+
+
 $servername = "localhost";
 $username = "root";
 $password = "root";

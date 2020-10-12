@@ -31,42 +31,57 @@
 		<div class="row">
 			<div class="col-lg-8 offset-lg-2">
 				<div class="p-2 rounded bg-light mt-5">
-					<table class="table table-striped">
-					  <thead>
-					    <tr>
-					      <th scope="col" class="border-0">ID</th>
-					      <th scope="col" class="border-0">Agent</th>
-					      <th scope="col" class="border-0">Score</th>
-					      <th scope="col" class="border-0">Rated By</th>
-					      <th scope="col" class="border-0" style="width: 140px">Actions</th>
 
-					    </tr>
-					  </thead>
-					  <tbody>
-					    <tr>
-					      <th scope="row">1</th>
-					      <td>Mark</td>
-					      <td>86</td>
-					      <td>Mark Zuckerberg</td>
-					      <td>
-					      	<button type="button" class="btn btn-primary btn-sm">Edit</button>
-					      	<button type="button" class="btn btn-danger btn-sm">Delete</button>
-					      </td>
-					    </tr>
-					    <tr>
-					      <th scope="row">2</th>
-					      <td>Jacob</td>
-					      <td>91</td>
-					      <td>steve jobs</td>
-					      <td>
-					      	<button type="button" class="btn btn-primary btn-sm">Edit</button>
-					      	<button type="button" class="btn btn-danger btn-sm">Delete</button>
-					      </td>
-					      
-					    </tr>
+					<?php 
+
+						include 'connect.php'; 
+
+						$sql = "SELECT * From agents";
+				        $result = mysqli_query($conn, $sql);
+
+				        if (mysqli_num_rows($result) == 0) {
+				            
+				        
+				         }else{ ?>
+
+				         	<table class="table table-striped">
+							  <thead>
+							    <tr>
+
+							      <th scope="col" class="border-0">ID</th>
+							      <th scope="col" class="border-0">Agent</th>
+							      <th scope="col" class="border-0">Score</th>
+							      <th scope="col" class="border-0">Rated By</th>
+							      <th scope="col" class="border-0" style="width: 140px">Actions</th>
+
+							    </tr>
+							  </thead>
+							  <tbody>
+
+					  	<?php while($row = mysqli_fetch_assoc($result)) {
+				                ?>
+
+					  		<tr>
+						      <th scope="row"><?= $row['id']; ?></th>
+						      <td><?= $row['name']; ?></td>
+						      <td><?= $row['score']; ?></td>
+						      <td>Mark Zuckerberg</td>
+						      <td>
+						      	<button type="button" class="btn btn-primary btn-sm">Edit</button>
+						      	<button type="button" class="btn btn-danger btn-sm">Delete</button>
+						      </td>
+						    </tr>
+					  		
+					  	<?php } ?>
+					    
+					    
 					    
 					  </tbody>
 					</table>
+				         	
+				       <?php  } mysqli_close($conn); ?>
+
+					
 				</div>
 			</div>
 		</div>
