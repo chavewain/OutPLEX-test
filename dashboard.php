@@ -36,7 +36,7 @@
 
 						include 'connect.php'; 
 
-						$sql = "SELECT * From agents";
+						$sql = "SELECT * From agents a LEFT JOIN users u ON a.user = u.id";
 				        $result = mysqli_query($conn, $sql);
 
 				        if (mysqli_num_rows($result) == 0) {
@@ -58,21 +58,20 @@
 							  </thead>
 							  <tbody>
 
-					  	<?php while($row = mysqli_fetch_assoc($result)) {
-				                ?>
+							  	<?php while($row = mysqli_fetch_assoc($result)) { ?>
 
-					  		<tr>
-						      <th scope="row"><?= $row['id']; ?></th>
-						      <td><?= $row['name']; ?></td>
-						      <td><?= $row['score']; ?></td>
-						      <td>Mark Zuckerberg</td>
-						      <td>
-						      	<button type="button" class="btn btn-primary btn-sm">Edit</button>
-						      	<button type="button" class="btn btn-danger btn-sm">Delete</button>
-						      </td>
-						    </tr>
-					  		
-					  	<?php } ?>
+							  		<tr>
+								      <th scope="row"><?= $row['id']; ?></th>
+								      <td><?= $row['agent']; ?></td>
+								      <td><?= $row['score']; ?></td>
+								      <td><?= $row['name']; ?></td>
+								      <td>
+								      	<button type="button" class="btn btn-primary btn-sm">Edit</button>
+								      	<button type="button" class="btn btn-danger btn-sm">Delete</button>
+								      </td>
+								    </tr>
+							  		
+							  	<?php } ?>
 					    
 					    
 					    
