@@ -11,7 +11,7 @@
  Target Server Version : 50726
  File Encoding         : 65001
 
- Date: 12/10/2020 15:53:32
+ Date: 12/10/2020 16:51:13
 */
 
 SET NAMES utf8mb4;
@@ -23,8 +23,9 @@ SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS `agents`;
 CREATE TABLE `agents` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) DEFAULT NULL,
+  `agent` varchar(255) DEFAULT NULL,
   `score` int(3) DEFAULT NULL,
+  `user` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
@@ -32,8 +33,8 @@ CREATE TABLE `agents` (
 -- Records of agents
 -- ----------------------------
 BEGIN;
-INSERT INTO `agents` VALUES (1, 'Mark Zuckerberg', 86);
-INSERT INTO `agents` VALUES (2, 'Steve Jobs', 93);
+INSERT INTO `agents` VALUES (1, 'Mark Zuckerberg', 86, 1);
+INSERT INTO `agents` VALUES (2, 'Steve Jobs', 93, 1);
 COMMIT;
 
 -- ----------------------------
