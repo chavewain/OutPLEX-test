@@ -43,11 +43,14 @@
 	        if($row['password'] == md5($password)){
 
 	        	session_start();
-                            
+                           
+
 	            // Store data in session variables
 	            $_SESSION["loggedin"] = true;
-	            $_SESSION["id"] = $id;
-	            $_SESSION["username"] = $username;   
+	            $_SESSION["id"] = $row['id'];
+	            $_SESSION["username"] = $row['username'];
+	            $_SESSION["name"] = $row['name'];
+	            $_SESSION["position"] = $row['position'];
 
 	        	header("Location: dashboard.php");
 	        	
