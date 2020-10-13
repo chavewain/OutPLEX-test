@@ -12,8 +12,8 @@
         if (mysqli_num_rows($result) == 0) { ?>
             
             <div class="alert alert-primary fade in alert-dismissible show" style="margin-top:18px;">
-     <strong>Alert!</strong> No reccords to show.
-</div>
+     			<strong>Alert!</strong> No reccords to show.
+			</div>
         
         <?php }else{ ?>
 

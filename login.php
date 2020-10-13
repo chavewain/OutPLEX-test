@@ -10,7 +10,17 @@
 </head>
 <body class="bg-login">
 
-   <?php include 'login_function.php'; ?>
+    <?php 
+
+      session_start();
+
+      if(isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] == true){
+          header("location: dashboard.php");
+      }
+
+    ?>
+
+    <?php include 'login_function.php'; ?>
 
    <div class="wrapper">
      <div id="formContainer">
@@ -41,8 +51,8 @@
 
        <!-- Login Form -->
        <form method="post" action="<?= $_SERVER['PHP_SELF']; ?>">
-         <input type="text" id="username" class="input-login fadeIn second" name="username" placeholder="username">
-         <input type="text" id="password" class="input-login fadeIn third" name="password" placeholder="password">
+         <input type="text" id="username" class="input-login fadeIn second" name="username" placeholder="username" autocomplete="off">
+         <input type="password" id="password" class="input-login fadeIn third" name="password" placeholder="password" autocomplete="off">
          <input type="submit" class="fadeIn fourth" value="Log In">
        </form>
 

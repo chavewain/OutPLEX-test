@@ -11,7 +11,7 @@
  Target Server Version : 50726
  File Encoding         : 65001
 
- Date: 12/10/2020 16:51:13
+ Date: 13/10/2020 09:16:41
 */
 
 SET NAMES utf8mb4;
@@ -27,14 +27,14 @@ CREATE TABLE `agents` (
   `score` int(3) DEFAULT NULL,
   `user` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of agents
 -- ----------------------------
 BEGIN;
-INSERT INTO `agents` VALUES (1, 'Mark Zuckerberg', 86, 1);
-INSERT INTO `agents` VALUES (2, 'Steve Jobs', 93, 1);
+INSERT INTO `agents` VALUES (9, 'wwww444', 22, 1);
+INSERT INTO `agents` VALUES (10, 'fdssdfds', 65, 1);
 COMMIT;
 
 -- ----------------------------
@@ -43,17 +43,20 @@ COMMIT;
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(100) NOT NULL,
-  `password` varchar(100) NOT NULL,
-  `name` varchar(255) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `name` varchar(150) NOT NULL,
+  `position` varchar(150) DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
 BEGIN;
-INSERT INTO `users` VALUES (1, 'chavez', '8df2081e1154e8e16a7e78e477c44949', 'Dionisio Chavez');
+INSERT INTO `users` VALUES (1, 'chavez', '8df2081e1154e8e16a7e78e477c44949', 'Dionisio Chavez', 'Web Developer', 'dchavez');
+INSERT INTO `users` VALUES (2, 'jrivera', 'c52331dd6fae697dbfa3954c00600b46', 'Joel Rivera', 'Database Admin', 'jrivera.jpg');
 COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;

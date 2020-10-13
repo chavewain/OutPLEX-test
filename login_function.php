@@ -51,6 +51,7 @@
 	            $_SESSION["username"] = $row['username'];
 	            $_SESSION["name"] = $row['name'];
 	            $_SESSION["position"] = $row['position'];
+	            $_SESSION["photo"] = $row['photo'];
 
 	        	header("Location: dashboard.php");
 	        	

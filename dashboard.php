@@ -1,3 +1,13 @@
+<?php 
+
+  session_start();
+
+  if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+      header("location: login.php");
+  }
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +24,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6">
-					<img class="user-img rounded-circle" alt="100x100" src="assets/img/user.jpg" data-holder-rendered="true">
+					<img class="user-img rounded-circle" alt="100x100" src="assets/img/<?php echo $_SESSION["photo"]; ?>" data-holder-rendered="true">
 					<div class="user-data d-flex align-items-center h-100">
 						<div class="row">
 							<div class="name col-sm-12"><?php session_start(); echo $_SESSION["name"]; ?></div>
@@ -38,7 +48,7 @@
 
 	<?php include 'add_form.php'; ?>
 	<?php include 'edit_form.php'; ?>
-	
+
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 offset-lg-2">
