@@ -41,7 +41,8 @@
 					      <td><?= $row['score']; ?></td>
 					      <td><?= $row['name']; ?></td>
 					      <td>
-					      	<a href="edit.php?agent=<?= $row['id'] ?>" class="btn btn-primary btn-sm">Edit</a>
+					      	<!-- <a href="a" class="btn btn-primary" data-toggle="modal" data-target="#editModal">Edit</a> -->
+					      	<a href="edit.php?agent=<?= $row['id'] ?>" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editModal" data-formid="<?= $row['id']; ?>" data-formagent="<?= $row['agent']; ?>" data-formscore="<?= $row['score']; ?>">Edit</a> 
 					      	<a href="delete.php?agent=<?= $row['id'] ?>" class="btn btn-danger btn-sm">Delete</a>
 					      </td>
 					    </tr>
