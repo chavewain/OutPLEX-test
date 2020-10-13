@@ -4,9 +4,10 @@
 	<title>Dashboard</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body class="bg-login">
 	<div class="top-bar">
@@ -24,67 +25,22 @@
 				</div>
 				<div class="col-md-6">
 					<div class="d-flex align-items-center h-100 float-right">
-						<button type="button" class="btn btn-success">New Agent</button>
+						<div class="row">
+							<a href="logout.php" class="btn btn-danger mr-2">Logout</a>
+							<button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">New Agent</button>
+						</div>
+				
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+
+	<?php include 'add_form.php'; ?>
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 offset-lg-2">
-				<div class="p-2 rounded bg-light mt-5">
-
-					<?php 
-
-						include 'connect.php'; 
-
-						$sql = "SELECT * From agents a LEFT JOIN users u ON a.user = u.id";
-				        $result = mysqli_query($conn, $sql);
-
-				        if (mysqli_num_rows($result) == 0) {
-				            
-				        
-				         }else{ ?>
-
-				         	<table class="table table-striped">
-							  <thead>
-							    <tr>
-
-							      <th scope="col" class="border-0">ID</th>
-							      <th scope="col" class="border-0">Agent</th>
-							      <th scope="col" class="border-0">Score</th>
-							      <th scope="col" class="border-0">Rated By</th>
-							      <th scope="col" class="border-0" style="width: 140px">Actions</th>
-
-							    </tr>
-							  </thead>
-							  <tbody>
-
-							  	<?php while($row = mysqli_fetch_assoc($result)) { ?>
-
-							  		<tr>
-								      <th scope="row"><?= $row['id']; ?></th>
-								      <td><?= $row['agent']; ?></td>
-								      <td><?= $row['score']; ?></td>
-								      <td><?= $row['name']; ?></td>
-								      <td>
-								      	<button type="button" class="btn btn-primary btn-sm">Edit</button>
-								      	<button type="button" class="btn btn-danger btn-sm">Delete</button>
-								      </td>
-								    </tr>
-							  		
-							  	<?php } ?>
-					    
-					    
-					    
-					  </tbody>
-					</table>
-				         	
-				       <?php  } mysqli_close($conn); ?>
-
-					
-				</div>
+				<?php include 'datagrid_agents.php'; ?>
 			</div>
 		</div>
 		

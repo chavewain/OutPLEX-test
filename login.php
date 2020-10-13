@@ -41,8 +41,8 @@
 
        <!-- Login Form -->
        <form method="post" action="<?= $_SERVER['PHP_SELF']; ?>">
-         <input type="text" id="username" class="fadeIn second" name="username" placeholder="username">
-         <input type="text" id="password" class="fadeIn third" name="password" placeholder="password">
+         <input type="text" id="username" class="input-login fadeIn second" name="username" placeholder="username">
+         <input type="text" id="password" class="input-login fadeIn third" name="password" placeholder="password">
          <input type="submit" class="fadeIn fourth" value="Log In">
        </form>
 
